@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 import uuid, secrets
+import os
 
 app = Flask(__name__)
 
@@ -14,4 +15,7 @@ def instance_info():
     })
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5001)
+    # Render provides the PORT env variable
+    port = int(os.environ.get("PORT", 5001))
+    app.run(host="0.0.0.0", port=port)
+

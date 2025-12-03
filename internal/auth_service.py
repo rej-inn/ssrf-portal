@@ -94,6 +94,6 @@ def admin():
     return jsonify({"flag": "CTF{ssrf_chain_hmac_master}"})
 
 if __name__ == "__main__":
-    # Use 127.0.0.1 binding so only local SSRF can reach it
-    app.run(host="127.0.0.1", port=5002)
-PY
+    # Render assigns the port via $PORT
+    port = int(os.environ.get("PORT", 5002))
+    app.run(host="0.0.0.0", port=port)
