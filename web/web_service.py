@@ -2,6 +2,14 @@ from flask import Flask, request
 import requests, re
 import json
 
+# near top of web/web_service.py
+import os
+
+port = int(os.environ.get("PORT", 5000))
+# example for Flask:
+app.run(host="0.0.0.0", port=port)
+
+
 app = Flask(__name__)
 
 @app.route("/")
