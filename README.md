@@ -24,12 +24,5 @@ python3 internal/auth_service.py &
 python3 web/web_service.py &
 \`\`\`
 
-## Systemd (example)
-Place systemd unit files in /etc/systemd/system/ (see repo for examples) and enable:
-\`\`\`
-sudo systemctl enable --now web_service metadata_service auth_service
-\`\`\`
 
-## Notes
-- Do NOT commit \`auth_db.json\` or \`venv/\`.
-- Export an OVA for TryHackMe upload (see instructions).
+
